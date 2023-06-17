@@ -138,26 +138,48 @@ const CloseIcon = styled(MdClose)`
   color: ${({ theme }) => (theme === "light" ? "#111" : "#bbb")};
 `;
 
+// const LinksContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 20px;
+
+//   @media (max-width: 768px) {
+//     position: absolute;
+//     top: 70px;
+//     right: ${({ menuOpen }) => (menuOpen ? "0" : "unset")};
+//     flex-direction: column;
+//     gap: 10px;
+//     width: 100%;
+//     max-height: ${({ menuOpen }) => (menuOpen ? "500px" : "0")};
+//     overflow: hidden;
+//     transition: 1s all ease;
+//     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};
+//     color: inherit
+//     opacity: 1;
+//     padding-bottom: 20px;
+//     gap:25px;
+//   }
+// `;
+
 const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
 
   @media (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     top: 70px;
-    right: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
+    left: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    max-height: ${({ menuOpen }) => (menuOpen ? "500px" : "0")};
-    overflow: hidden;
+    height: ${({ menuOpen }) => (menuOpen ? "calc(100vh - 70px)" : "0")};
+    overflow-y: auto;
     transition: 1s all ease;
     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};
-    color: inherit
-    opacity: 1;
+    color: inherit;
     padding-bottom: 20px;
-    gap:25px;
+    z-index: 999;
   }
 `;
 
@@ -209,11 +231,12 @@ const Navbar = () => {
           <DesktopLogo>Lo-Kwu Shehe Topp Community</DesktopLogo>
         )}
       </Logo>
+      <DarkModeToggle />
       <MenuButton onClick={toggleMenu}>
         {menuOpen ? <CloseIcon /> : <MenuIcon />}
       </MenuButton>
+
       <LinksContainer menuOpen={menuOpen} ref={menuRef} theme={theme.mode}>
-        <DarkModeToggle />
         {links.map((link) => (
           <Link key={link.id} href={link.url}>
             {link.title}

@@ -1,15 +1,12 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 100px;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
+  gap: 50px;
+  height: 100%;
 }
 
 .wrapper {
-  gap: 100px;
+  gap: 50px;
 }
 
 .item {
@@ -39,6 +36,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .img {
@@ -50,6 +48,7 @@
 .desc {
   font-size: 24px;
   font-weight: 300;
+  text-align: justify;
 }
 
 .button {
@@ -69,5 +68,12 @@
   }
   .item {
     margin-bottom: 0;
+  }
+  .title {
+    font-size: 45px;
+  }
+  .desc {
+    font-size: 20px;
+    margin-top: -20px;
   }
 }

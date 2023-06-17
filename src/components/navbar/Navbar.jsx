@@ -138,29 +138,6 @@ const CloseIcon = styled(MdClose)`
   color: ${({ theme }) => (theme === "light" ? "#111" : "#bbb")};
 `;
 
-// const LinksContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: 20px;
-
-//   @media (max-width: 768px) {
-//     position: absolute;
-//     top: 70px;
-//     right: ${({ menuOpen }) => (menuOpen ? "0" : "unset")};
-//     flex-direction: column;
-//     gap: 10px;
-//     width: 100%;
-//     max-height: ${({ menuOpen }) => (menuOpen ? "500px" : "0")};
-//     overflow: hidden;
-//     transition: 1s all ease;
-//     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};
-//     color: inherit
-//     opacity: 1;
-//     padding-bottom: 20px;
-//     gap:25px;
-//   }
-// `;
-
 const LinksContainer = styled.div`
   display: flex;
   align-items: center;
@@ -173,7 +150,7 @@ const LinksContainer = styled.div`
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    height: ${({ menuOpen }) => (menuOpen ? "calc(100vh - 70px)" : "0")};
+    height: ${({ menuOpen }) => (menuOpen ? "100px" : "0")};
     overflow-y: auto;
     transition: 1s all ease;
     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};

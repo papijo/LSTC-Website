@@ -17,7 +17,7 @@ export default function Home() {
         </p>
         {/* Add Button Here */}
       </div>
-      <div className={styles.item}>
+      <div className={styles.itemtwo}>
         <Image src={Estate} alt="LSTC" className={styles.img} />
       </div>
     </div>

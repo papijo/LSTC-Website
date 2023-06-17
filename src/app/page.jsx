@@ -18,8 +18,14 @@ export default function Home() {
           </p>
           {/* Add Button Here */}
         </div>
-        <div className={styles.item}>
-          <Image src={Estate} alt="LSTC" className={styles.img} />
+        <div className={styles.imagewrapper}>
+          <div className={styles.image}>
+            <img
+              src="https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZXN0YXRlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+              alt="LSTC"
+              className={styles.img}
+            />
+          </div>
         </div>
       </div>
     </div>

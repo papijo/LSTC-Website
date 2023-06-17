@@ -26,18 +26,25 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.imagewrapper {
+  flex: 1;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.image {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
 .img {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
-
-  @media (max-width: 768px) {
-    width: 90%;
-    align-self: center;
-    height: 30%;
-    border-radius: 20px;
-  }
+  height: auto;
+  border-radius: 10px;
 }
 
 .desc {
@@ -53,4 +60,14 @@
   border-radius: 5px;
   width: max-content;
   color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .image {
+    height: 250px;
+    border-radius: 10px;
+  }
+  .item {
+    margin-bottom: 0;
+  }
 }

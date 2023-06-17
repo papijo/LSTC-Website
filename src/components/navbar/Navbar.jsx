@@ -78,16 +78,7 @@ const links = [
     title: "Home",
     url: "/",
   },
-  {
-    id: 2,
-    title: "Portfolio",
-    url: "/portfolio",
-  },
-  {
-    id: 3,
-    title: "Blog",
-    url: "/blog",
-  },
+
   {
     id: 4,
     title: "About",
@@ -98,69 +89,7 @@ const links = [
     title: "Contact",
     url: "/contact",
   },
-  {
-    id: 6,
-    title: "Dashboard",
-    url: "/dashboard",
-  },
 ];
-
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const menuRef = useRef();
-  const theme = useContext(ThemeContext);
-  console.log(theme);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setMenuOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return (
-    <Container>
-      <Logo href="/">
-        {isMobile ? (
-          <MobileLogo>LSTC</MobileLogo>
-        ) : (
-          <DesktopLogo>Lo-Kwu Shehe Topp Community</DesktopLogo>
-        )}
-      </Logo>
-      <MenuButton onClick={toggleMenu}>
-        {menuOpen ? <CloseIcon /> : <MenuIcon />}
-      </MenuButton>
-      <LinksContainer menuOpen={menuOpen} ref={menuRef} theme={theme.mode}>
-        <DarkModeToggle />
-        {links.map((link) => (
-          <Link key={link.id} href={link.url}>
-            {link.title}
-          </Link>
-        ))}
-      </LinksContainer>
-    </Container>
-  );
-};
 
 const Container = styled.div`
   height: 100px;
@@ -216,7 +145,7 @@ const LinksContainer = styled.div`
 
   @media (max-width: 768px) {
     position: absolute;
-    top: 100px;
+    top: 70px;
     right: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
     flex-direction: column;
     gap: 10px;
@@ -227,6 +156,8 @@ const LinksContainer = styled.div`
     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};
     color: inherit
     opacity: 1;
+    padding-bottom: 20px;
+    gap:25px;
   }
 `;
 
@@ -234,6 +165,63 @@ const Link = styled.a`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  font-size: 20px;
 `;
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef();
+  const theme = useContext(ThemeContext);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <Container>
+      <Logo href="/">
+        {isMobile ? (
+          <MobileLogo>LSTC</MobileLogo>
+        ) : (
+          <DesktopLogo>Lo-Kwu Shehe Topp Community</DesktopLogo>
+        )}
+      </Logo>
+      <MenuButton onClick={toggleMenu}>
+        {menuOpen ? <CloseIcon /> : <MenuIcon />}
+      </MenuButton>
+      <LinksContainer menuOpen={menuOpen} ref={menuRef} theme={theme.mode}>
+        <DarkModeToggle />
+        {links.map((link) => (
+          <Link key={link.id} href={link.url}>
+            {link.title}
+          </Link>
+        ))}
+      </LinksContainer>
+    </Container>
+  );
+};
 
 export default Navbar;

@@ -113,7 +113,7 @@ const DesktopLogo = styled.div`
 
 const MobileLogo = styled.div`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 25px;
   color: inherit;
 `;
 

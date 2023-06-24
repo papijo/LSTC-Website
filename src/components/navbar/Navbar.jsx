@@ -1,71 +1,4 @@
 "use client";
-// import Link from "next/link";
-// import React from "react";
-// import styles from "./navbar.module.css";
-// import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-// // import { signOut, useSession } from "next-auth/react";
-
-// const links = [
-//   {
-//     id: 1,
-//     title: "Home",
-//     url: "/",
-//   },
-//   // {
-//   //   id: 2,
-//   //   title: "Portfolio",
-//   //   url: "/portfolio",
-//   // },
-//   // {
-//   //   id: 3,
-//   //   title: "Blog",
-//   //   url: "/blog",
-//   // },
-//   {
-//     id: 4,
-//     title: "About",
-//     url: "/about",
-//   },
-//   {
-//     id: 5,
-//     title: "Contact",
-//     url: "/contact",
-//   },
-//   // {
-//   //   id: 6,
-//   //   title: "Dashboard",
-//   //   url: "/dashboard",
-//   // },
-// ];
-
-// const Navbar = () => {
-//   // const session = useSession();
-//   return (
-//     <div className={styles.container}>
-//       <Link className={styles.logo} href="/">
-//         Lo-Kwu Shehe Topp Community
-//       </Link>
-//       <div className={styles.links}>
-//         <DarkModeToggle />
-//         {links.map((link) => {
-//           return (
-//             <Link key={link.id} href={link.url} className={styles.link}>
-//               {" "}
-//               {link.title}{" "}
-//             </Link>
-//           );
-//         })}
-//         {/* {session.status === "authenticated" && (
-//           <button className={styles.logout} onClick={signOut}>
-//             Logout
-//           </button>
-//         )} */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
 import React, { useState, useRef, useEffect, useContext } from "react";
 import styled from "styled-components";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
@@ -80,14 +13,29 @@ const links = [
   },
 
   {
-    id: 4,
+    id: 2,
     title: "About",
     url: "/about",
   },
   {
-    id: 5,
+    id: 3,
     title: "Contact",
     url: "/contact",
+  },
+  {
+    id: 4,
+    title: "Land",
+    url: "/land",
+  },
+  {
+    id: 5,
+    title: "Houses for Rent",
+    url: "/rent",
+  },
+  {
+    id: 6,
+    title: "Houses for Sale",
+    url: "/sale",
   },
 ];
 
@@ -150,7 +98,7 @@ const LinksContainer = styled.div`
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    height: ${({ menuOpen }) => (menuOpen ? "100px" : "0")};
+    height: ${({ menuOpen }) => (menuOpen ? "auto" : "0")};
     overflow-y: auto;
     transition: 1s all ease;
     background-color: ${({ theme }) => (theme === "light" ? "white" : "#111")};

@@ -45,7 +45,6 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  max-height: max-content;
 }
 html,
 body {
@@ -53,7 +52,6 @@ body {
   background-color: #111;
   color: #bbb;
   margin-bottom: 0;
-  max-height: max-content;
 }
 
 a {
@@ -86,9 +84,6 @@ a {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  html {
-    background-color: red;
-  }
   .container {
     max-width: 100%;
     padding: 0 20px;

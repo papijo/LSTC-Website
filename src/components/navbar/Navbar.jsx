@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useContext } from "react";
 import styled from "styled-components";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { MdMenu, MdClose } from "react-icons/md";
-import { ThemeContext, ThemeProvider } from "@/context/ThemeContext";
+import { ThemeContext, ThemeProvider } from "../../context/ThemeContext";
 
 const links = [
   {

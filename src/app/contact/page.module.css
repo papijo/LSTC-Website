@@ -86,9 +86,109 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.card:hover h3 {
+.card:hover h4 {
   transition: all 0.3s ease-out;
   color: #fff;
+}
+
+.formheading {
+  text-align: center;
+  margin: 20px;
+}
+
+.contactform {
+  display: flex;
+  gap: 100px;
+  margin-top: 30px;
+}
+
+.forminfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imagecontainer {
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.form {
+  flex: 1;
+}
+
+.inputwrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputfield {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: inherit;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.inputlabel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: inherit;
+  transform-origin: top left;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.inputfield:focus + .inputlabel,
+.inputfield:not(:placeholder-shown) + .inputlabel {
+  top: -18px;
+  left: 5px;
+  font-size: 15px;
+  color: inherit;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.inputfield::placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.inputfield:focus::placeholder,
+.inputfield:not(:placeholder-shown)::placeholder {
+  opacity: 0;
+  outline: none;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.formbutton {
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 900px) {
@@ -100,5 +200,32 @@
 
   .card {
     margin-bottom: 10px;
+  }
+  .contactform {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .contactform {
+    flex-direction: column;
+  }
+  .imagecontainer {
+    display: flex;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .form {
+    flex: 1;
+    margin-top: 10px;
   }
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 75vh;
 }
 
 .heading {
@@ -186,6 +186,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .container {
+    height: 60vh;
+  }
   .heading {
     margin: 20px;
   }

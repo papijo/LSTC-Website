@@ -45,12 +45,13 @@ const Contact = () => {
               type="text"
               className={styles.inputfield}
               placeholder="Enter Your Name"
+              required
             />
             <label className={styles.inputlabel}>Name</label>
           </div>
           <div className={styles.inputwrapper}>
             <input
-              type="text"
+              type="email"
               className={styles.inputfield}
               placeholder="Enter Your Email"
             />
@@ -58,9 +59,10 @@ const Contact = () => {
           </div>
           <div className={styles.inputwrapper}>
             <input
-              type="text"
+              type="tel"
               className={styles.inputfield}
               placeholder="Enter Your Phone Number"
+              required
             />
             <label className={styles.inputlabel}>Phone Number</label>
           </div>

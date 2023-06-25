@@ -26,8 +26,8 @@ const Contact = () => {
         })}
       </div>
       <h3 className={styles.formheading}>
-        Still want a Commnunity Official to get back to you. Fill the form on
-        the right side
+        Still want a Commnunity Official to get back to you. Fill the form
+        below.
       </h3>
       <div className={styles.contactform}>
         <div className={styles.forminfo}>

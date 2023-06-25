@@ -29,12 +29,12 @@ const links = [
   },
   {
     id: 5,
-    title: "Houses for Rent",
+    title: "Properties for Rent",
     url: "/rent",
   },
   {
     id: 6,
-    title: "Houses for Sale",
+    title: "Properties for Sale",
     url: "/sale",
   },
 ];

@@ -36,3 +36,4 @@ const data = [
     pic4: "https://plus.unsplash.com/premium_photo-1675179053301-412824aff620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1400&q=60",
   },
 ];
+export default data;

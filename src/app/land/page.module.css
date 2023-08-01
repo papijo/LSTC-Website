@@ -6,33 +6,35 @@
   display: flex;
   flex-direction: column;
 }
+
 .wrapper {
   display: flex;
   gap: 10px;
   margin-top: 30px;
   border: 0.5px solid gray;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px;
 }
 
 .imginfo {
-  flex: 2;
+  flex: 1;
   position: relative;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  background-color: red;
 }
 
 .image {
   object-fit: contain;
-  height: 30vh;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Add border-radius to the image */
 }
 
 .landinfo {
-  flex: 4;
-
+  flex: 1;
   border-radius: 20px;
   padding: 10px;
 }
@@ -52,15 +54,9 @@
   font-size: 20px;
 }
 
+/* Media Query */
 @media screen and (max-width: 900px) {
   .wrapper {
     flex-direction: column;
-  }
-
-  .imginfo {
-  }
-
-  .image {
-    height: 20vh;
   }
 }

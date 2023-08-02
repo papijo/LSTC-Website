@@ -3,6 +3,7 @@ import styles from "./page.module.css"; // Import other styles if needed
 import Image from "next/image";
 import data from "./data";
 import "./page.module.css"; // Import the separate CSS file
+import Link from "next/link";
 
 const Land = () => {
   console.log(data);
@@ -29,7 +30,9 @@ const Land = () => {
                 <td>{d.plots}</td>
                 <td>{d.location}</td>
                 <td>
-                  <button className={styles.button}>View</button>
+                  <Link href={`/land/${d.id}`}>
+                    <button className={styles.button}>View</button>
+                  </Link>
                 </td>
               </tr>
             ))}

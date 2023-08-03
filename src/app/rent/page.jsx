@@ -17,7 +17,7 @@ const page = () => {
 
         {/* Create a filtered list */}
         {data.map((d) => (
-          <Rent />
+          <Rent key={d.id} />
         ))}
       </div>
     </>

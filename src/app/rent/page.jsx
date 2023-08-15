@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import data from "./data";
 import Rent from "../../components/Application/Rent/Rent";
+import Link from "next/link";
 
 const page = () => {
   console.log(data);
@@ -17,7 +18,9 @@ const page = () => {
 
         {/* Create a filtered list */}
         {data.map((d) => (
-          <Rent key={d.id} />
+          <Link href={`/rent/${d.id}`} key={d.id}>
+            <Rent />
+          </Link>
         ))}
       </div>
     </>
